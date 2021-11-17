@@ -1,13 +1,35 @@
-import _ from 'lodash';
 import './style.css';
+import * as logicBoard from './logicBoard';
 
-function component() {
-  const element = document.createElement('div');
+const arrObjBoard = [
+  {
+    name: 'Pablo Picasso',
+    score: 100,
+  },
+  {
+    name: 'Vincent van Gogh',
+    score: 20,
+  },
+  {
+    name: 'Leonardo da Vinci',
+    score: 50,
+  },
+  {
+    name: 'Claude Monet',
+    score: 78,
+  },
+  {
+    name: 'Salvador Dali',
+    score: 125,
+  },
+  {
+    name: 'Henri Matisse',
+    score: 77,
+  },
+  {
+    name: 'Rembrandt',
+    score: 42,
+  },
+];
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-  return element;
-}
-
-document.body.appendChild(component());
+logicBoard.loadScoreBoard(arrObjBoard);
