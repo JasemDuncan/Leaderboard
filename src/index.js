@@ -1,35 +1,6 @@
 import './style.css';
 import * as logicBoard from './logicBoard';
 
-const arrObjBoard = [
-  {
-    name: 'Pablo Picasso',
-    score: 100,
-  },
-  {
-    name: 'Vincent van Gogh',
-    score: 20,
-  },
-  {
-    name: 'Leonardo da Vinci',
-    score: 50,
-  },
-  {
-    name: 'Claude Monet',
-    score: 78,
-  },
-  {
-    name: 'Salvador Dali',
-    score: 125,
-  },
-  {
-    name: 'Henri Matisse',
-    score: 77,
-  },
-  {
-    name: 'Rembrandt',
-    score: 42,
-  },
-];
+document.getElementById('btnRefresh').addEventListener('click', logicBoard.loadScoreBoard);
 
-logicBoard.loadScoreBoard(arrObjBoard);
+document.getElementById('btnSubmit').addEventListener('click', logicBoard.postScores);

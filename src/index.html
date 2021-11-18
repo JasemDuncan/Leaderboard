@@ -22,7 +22,7 @@
               
             </div>
             <div class="col">
-                <button type="button" class="btn btn-secondary">Secondary</button>
+                <button type="button" class="btn btn-secondary" id='btnRefresh'>Refresh</button>
             </div>            
             <div class="col">
                 <h3>Add your score</h3>
@@ -34,15 +34,18 @@
                 </ul>
             </div>
             <div class="col">
-                <form>
+                <div>
                     <div class="mb-3">                      
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Your name">                      
+                      <input type="text" class="form-control" id="txtName" placeholder="Your name">                      
                     </div>
                     <div class="mb-3">                      
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Your score">
+                      <input type="text" class="form-control" id="txtScore" placeholder="Your score">
                     </div>
-                    <button type="submit" class="btn btn-secondary">Submit</button>
-                  </form>
+                    <button class="btn btn-secondary" id="btnSubmit">Submit</button>
+                    <div id="lblError" class="alert alert-dark" role="alert" hidden="true"> 
+                        
+                    </div>
+                </div>
             </div>            
         </div>
     </div>
