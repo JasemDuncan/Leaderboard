@@ -2,7 +2,7 @@ name: Deploy website
 on:
   push:
   branches:
-    - styling
+    - main
 jobs:
   deploy-page:
     runs-on: ubuntu-latest
@@ -14,4 +14,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages  # The branch the actions should deploy to.
-          folder: src # The folder the action should deploy.
+          folder: dist # The folder the action should deploy.
