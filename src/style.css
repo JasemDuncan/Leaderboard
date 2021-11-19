@@ -4,4 +4,140 @@
 
 body {
   background-color: rgb(255, 255, 255);
+  background-image: url(./background.jpg);
+  font-family: 'M PLUS Code Latin', sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  height: 800px;
+}
+
+.changeColor {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+.headerRow {
+  height: 270px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.headerRowTwo {
+  height: 80px;
+}
+
+.btnNeon {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  box-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff;
+  font-size: 20px;
+  color: white;
+}
+
+.borderSolid::placeholder {
+  color: white;
+}
+
+.borderSolid {
+  font-size: 20px;
+  border-width: 4px;
+  border-style: solid;
+  animation: pulsate 1.5s infinite alternate;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  box-shadow:
+    0 0 0.2rem #fff,
+    0 0 0.2rem #fff,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe,
+    0 0 2.8rem #bc13fe,
+    inset 0 0 1.3rem #bc13fe;
+}
+
+@keyframes pulsate {
+  100% {
+    text-shadow:
+
+      0 0 40px #bc13fe,
+      0 0 80px #bc13fe,
+      0 0 90px #bc13fe,
+      0 0 100px #bc13fe,
+      0 0 150px #bc13fe;
+  }
+
+  0% {
+    text-shadow:
+
+      0 0 10px #bc13fe,
+      0 0 45px #bc13fe,
+      0 0 55px #bc13fe,
+      0 0 70px #bc13fe,
+      0 0 80px #bc13fe;
+  }
+}
+
+ul.list-group.list-group-striped li:nth-of-type(odd) {
+  background: rgba(12, 12, 12, 0.3);
+}
+
+ul.list-group.list-group-striped li:nth-of-type(even) {
+  background: rgba(189, 189, 189, 0.4);
+}
+
+ul.list-group.list-group-hover li:hover {
+  background: rgba(207, 219, 253, 0.5);
+}
+
+.formsBig {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-items: flex-start;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.neonText {
+  animation: flicker 5s infinite alternate;
+  color: #fff;
+}
+
+h1 {
+  font-size: 4.2rem;
+}
+
+@keyframes flicker {
+  10%,
+  20%,
+  30%,
+  50%,
+  88%,
+  100% {
+    text-shadow:
+      0 0 8px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa;
+  }
+}
+
+h2 {
+  font-size: 1.8rem;
 }
