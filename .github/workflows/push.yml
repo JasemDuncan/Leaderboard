@@ -2,7 +2,7 @@ name: Deploy website
 on:
   push:
   branches:
-    - development
+    - styling
 jobs:
   deploy-page:
     runs-on: ubuntu-latest
