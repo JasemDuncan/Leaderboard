@@ -1,3 +1,6 @@
+function ReorderScores(arrObjTask) {
+  return arrObjTask.sort((a, b) => ((a.score > b.score) ? -1 : 1));
+}
 // GET
 export const loadScoreBoard = async () => {
   let items;
@@ -6,10 +9,10 @@ export const loadScoreBoard = async () => {
 
   const ulScore = document.getElementById('ulScore');
   ulScore.innerHTML = '';
-  ulScore.classList = 'list-group';
+  ulScore.classList = 'list-group list-group-hover list-group-striped borderSolid';
 
   try {
-    const URL = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/7nRAT4myJWoTOfOTMxhR/scores', {
+    const URL = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Z6KMDG5alGQLoPEVK1zX/scores', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -19,12 +22,29 @@ export const loadScoreBoard = async () => {
   } catch (err) {
     ulScore.innerHTML += `Error in the API${err}`;
   }
+  let arritemsResult = [];
+  arritemsResult = ReorderScores(items.result);
 
-  if (items.result.length) {
-    for (let j = 0; j < items.result.length; j += 1) {
+  if (arritemsResult.length) {
+    for (let j = 0; j < arritemsResult.length; j += 1) {
       const lsScore = document.createElement('li');
-      lsScore.classList = 'list-group-item';
-      lsScore.innerText = `${items.result[j].user}:  ${items.result[j].score}`;
+      lsScore.classList = 'list-group-item changeColor';
+      lsScore.innerText = `${arritemsResult[j].user}:  ${arritemsResult[j].score}`;
+      if (j === 0) {
+        lsScore.innerHTML += '&emsp;&emsp;<span class="material-icons"> star_rate </span><span class="material-icons"> star_rate </span><span class="material-icons"> star_rate </span>  <span class="badge bg-primary rounded-pill">3</span> ';
+      }
+      if ((j === 1) || (j === 2)) {
+        lsScore.innerHTML += '&emsp;&emsp;<span class="material-icons"> star_rate </span><span class="material-icons"> star_rate </span> <span class="badge bg-primary rounded-pill">2</span>';
+      }
+      if ((j === 3)) {
+        lsScore.innerHTML += '&emsp;&emsp;&emsp;<span class="material-icons"> star_rate </span> <span class="badge bg-primary rounded-pill">1</span>';
+      }
+      if ((j === 4)) {
+        lsScore.innerHTML += `&emsp;   &emsp;<span class="material-icons">
+        rocket
+        </span>`;
+      }
+
       ulScore.appendChild(lsScore);
     }
   } else {
@@ -54,7 +74,7 @@ export const postScores = async () => {
 
   if (name.value.length && score.value.length) {
     try {
-      await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/7nRAT4myJWoTOfOTMxhR/scores', {
+      await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Z6KMDG5alGQLoPEVK1zX/scores', {
         method: 'POST',
         body: JSON.stringify(
           {
