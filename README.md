@@ -18,6 +18,9 @@ Additional description about the project and its features.
 - APIs
 - Babel
 
+## Live Demo
+- Click for live demo: [Leaderboard Site](https://jasemduncan.github.io/Leaderboard/dist/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
