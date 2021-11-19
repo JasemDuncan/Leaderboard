@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# WEBPACK BOILERPLATE
+# Leaderboard
 
-> This is a template to start a JS project using webpack.
+> This is an app where you can check and submits scores usings APIs.
 
 ![screenshot](./app_screenshot.png)
 
@@ -13,16 +13,22 @@ Additional description about the project and its features.
 - HTML
 - CSS
 - JS
+- Webpack
+- Async/Await
+- APIs
+- Babel
 
 ## Getting Started
-
-**This is a template using webpack.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Setup
-https://webpack.js.org/guides/getting-started/
+
+- Clone it as `git@github.com:JasemDuncan/Leaderboard.git`
+- Run: npm install
+- Run: npm run build
+- Run: npm run start
+
 
 
 ## Authors
