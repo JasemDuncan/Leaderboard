@@ -1,0 +1,17 @@
+name: Deploy website
+on:
+  push:
+  branches:
+    - development
+jobs:
+  deploy-page:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@2.3.1
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages  # The branch the actions should deploy to.
+          folder: src # The folder the action should deploy.
